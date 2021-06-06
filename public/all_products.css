@@ -38,3 +38,15 @@ img{
     height: 30vh;
     width: 20vw;
 }
+
+@media (max-width: 768px) { 
+    .card{
+        background-color: rgba(177, 217, 230, 0.678);
+        border: none;
+        box-shadow: 
+            -2px -2px 4px 2px #fff,
+            2px 2px 4px 4px #c4c4c4;
+        width: 30vw;
+    
+    }
+}
