@@ -56,8 +56,8 @@ mongoose.connect(
 );
 
 app.get('/',(req,res)=>{
-  res.redirect("/login&signup")
-})
+  res.redirect("/login&signup");
+});
 
 app.get("/login&signup", (req, res) => {
   res.render("login", { layout: "main" });
@@ -82,6 +82,7 @@ app.use("/seller", Sellerauth, update);
 app.use("/seller",Sellerauth, product_update);
 app.use("/seller",Sellerauth, product_delete);
 
-app.listen(5000, () => {
+const port = process.env.PORT || 5000 ;
+app.listen(port, () => {
   console.log("server started");
 });
