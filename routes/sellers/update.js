@@ -9,7 +9,7 @@ router.get("/update", async (req, res) => {
   console.log(seller_id);
   const getproducts = await all_products.find({ seller_id}).lean();
   console.log(getproducts);
-  res.render("seller_productUpdate", { layout: "update", getproducts });
+  res.render("seller_ProductUpdate", { layout: "update", getproducts });
   
 });
 
