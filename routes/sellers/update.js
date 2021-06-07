@@ -4,15 +4,13 @@ const mongoose = require("mongoose");
 const all_products = require("../../models/add_product")
 
 router.get("/update", async (req, res) => {
-  try {
-    const seller_id = req.user;
-    console.log(seller_id);
-    const getproducts = await all_products.find({ seller_id}).lean();
-    console.log(getproducts);
-    res.render("seller_productUpdate", { layout: "update", getproducts });
-  } catch (error) {
-    res.status(500).send(`Internal Error Occurred: ${error._message}`);
-  }
+  
+  const seller_id = req.user;
+  console.log(seller_id);
+  const getproducts = await all_products.find({ seller_id}).lean();
+  console.log(getproducts);
+  res.render("seller_productUpdate", { layout: "update", getproducts });
+  
 });
 
 router.get("/electronics_update", async (req, res) => {
