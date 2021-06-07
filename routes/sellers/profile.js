@@ -23,7 +23,7 @@ router.post("/profile/:id", async(req, res) => {
     const user = await seller.findOneAndUpdate(_id, req.body);
     await user.save();
     console.log(user);
-    res.redirect('/seller/profile')
+    res.redirect('/seller/home')
   } catch (error) {
     res.send(`Internal Error Occurred: ${error._message}`);
   }
